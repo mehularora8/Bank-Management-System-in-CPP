@@ -1,3 +1,9 @@
+/*
+Dashboard for Bill payments and Ticket bookings
+Project for CBSE Grade 12
+Mehul Arora and Raghav Mathur
+Class XII-A
+*/
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
