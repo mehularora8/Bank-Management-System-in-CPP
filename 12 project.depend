@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1539023142 source:c:\users\lenovo\desktop\12 project\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+
+1543339112 source:e:\github repositories\grade-12-project\12 project\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<ctime>
+	<string.h>
+
