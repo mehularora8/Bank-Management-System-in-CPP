@@ -15,9 +15,9 @@ Class XII-A
 using namespace std;
 
 // Account Login
-bool valid_username(char username[17]);
-bool existing_username(char username[17]);
-bool existing_username_create(char username[17]);
+int valid_username(char username[17]);
+int existing_username(char username[17]);
+int existing_username_create(char username[17]);
 
 // Dashboard
 void check_amount();
@@ -55,12 +55,12 @@ public:
     account();
     char* return_username();
     float return_balance();
-    bool check_password(int);
+    int check_password(int);
     void in();
     void out();
     void deposit(float amount);
     void withdraw(float amount);
-    bool sufficient_balance(float amount);
+    int sufficient_balance(float amount);
     void change_password(int new_password);
 };
 
@@ -87,7 +87,7 @@ float account::return_balance()
 }
 
 // Authorizes Account
-bool account::check_password(int password)
+int account::check_password(int password)
 {
     if (account_password == password)
     {
@@ -128,7 +128,7 @@ void account::in()
 }
 
 // Output Account Details
-void account::out()
+void account::out() 
 {
     cout << account_username << endl;
     cout << "First name: " << f_name << endl;
@@ -148,7 +148,7 @@ void account::withdraw(float amount)
 }
 
 // Checks if Withdrawal is Allowed
-bool account::sufficient_balance(float amount)
+int account::sufficient_balance(float amount)
 {
     if (balance >= amount)
     {
@@ -209,7 +209,7 @@ int main()
 }
 
 // Valid username Check
-bool valid_username(char username[17])
+int valid_username(char username[17])
 {
     if (strlen(username)!=12)
     {
@@ -221,7 +221,7 @@ bool valid_username(char username[17])
 }
 
 // Existing username Check (During Account Authorization)
-bool existing_username(char username[17])
+int existing_username(char username[17])
 {
     ifstream f("accounts.dat", ios::binary);
     account a;
@@ -241,7 +241,7 @@ bool existing_username(char username[17])
 }
 
 // Existing username Check (During Account Creation)
-bool existing_username_create(char username[17])
+int existing_username_create(char username[17])
 {
     ifstream f("accounts.dat", ios::binary);
     account a;
@@ -261,7 +261,7 @@ bool existing_username_create(char username[17])
 }
 
 // Valid Withdrawal Amount (Not Negative, Not Zero)
-bool check_amount(float amount)
+int check_amount(float amount)
 {
     if (amount > 0)
     {
