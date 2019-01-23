@@ -91,12 +91,12 @@ int account::check_password(int password)
 {
     if (account_password == password)
     {
-        cout << "\nAuthorized\n";
+        cout << "\nAuthorized!\n \n";
         return 1;
     }
     else
     {
-        cout << "\nIncorrect password\n";
+        cout << "\nIncorrect password. Please try again\n";
         return 0;
     }
 }
@@ -128,7 +128,7 @@ void account::in()
 }
 
 // Output Account Details
-void account::out() 
+void account::out()
 {
     cout << account_username << endl;
     cout << "First name: " << f_name << endl;
@@ -171,6 +171,7 @@ int main()
 
     while (1)
     {
+        cout<<"Welcome to Quickpay payment solutions!"<<endl;
         // Menu
         cout << "\n\t1. Buy tickets"
              << "\n\t2. Deposit Money"
@@ -186,15 +187,101 @@ int main()
         cout << "\n\nChoose an option: ";
         cin >> choice;
 
-        if (choice == 1) buy_tickets();
-        else if (choice == 2) deposit();
-        else if (choice == 3) check_balance();
-        else if (choice == 4) pay_bills();
-        else if (choice == 5) create_account();
-        else if (choice == 6) delete_account();
-        else if (choice == 7) change_password();
-        else if (choice == 8) account_list();
-        else if (choice == 9) sort_accounts();
+        if (choice == 1) {
+            system("CLS");
+            cout<<"BUYING TICKETS"<<endl<<endl;
+            buy_tickets();
+            cout<<endl<<"Tickets have ben purchased. \n Thank you for buying tickets!"<<endl;
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 2) {
+            system("CLS");
+            cout<<"DEPOSITING MONEY"<<endl<<endl;
+            deposit();
+            cout<<endl<<"Money has been deposited!"<<endl;
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 3){
+            system("CLS");
+            cout<<"CHECKING BALANCE"<<endl<<endl;
+            check_balance();
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 4){
+            system("CLS");
+            cout<<"PAYING BILLS"<<endl<<endl;
+            pay_bills();
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 5){
+            system("CLS");
+            cout<<"CREATING NEW ACCOUNT"<<endl<<endl;
+            create_account();
+            cout<<"Your accounts has been created. \n Thank you for creating an account!"<<endl;
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 6){
+            system("CLS");
+            cout<<"DELETING ACCOUNT"<<endl<<endl;
+            delete_account();
+            cout<<"We're sad to see you go. Hope you return soon!"<<endl;
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 7){
+            system("CLS");
+            cout<<"CHANGING ACCOUNT PASSWORD"<<endl<<endl;
+            change_password();
+            cout<<"Your password has been changed!"<<endl;
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 8){
+            system("CLS");
+            cout<<"LISTING ALL ACCOUNTS (ADMIN ONLY)"<<endl<<endl;
+            account_list();
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
+        else if (choice == 9) {
+            system("CLS");
+            cout<<"SORTING ALL ACCOUNTS (ADMIN ONLY)"<<endl<<endl;
+            sort_accounts();
+            cout<<"Press \"R\" to return."<<endl;
+            char p;
+            cin>>p;
+            if(p=='R'||p=='r')
+                system("CLS");
+        }
         // Exits Menu
         else if (choice == 10)
         {
